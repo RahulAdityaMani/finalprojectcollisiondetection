@@ -7,8 +7,8 @@ void setup(){
  size(800,800);
 background(255);
 img = loadImage("star.JPG");
-play = new Ball(color(0,0,255),200, 675,2,-2);
-frameRate(10000);
+play = new Ball(color(0,0,255),200, 675,10,-10);
+//frameRate(10000);
 }
 
 void draw(){
