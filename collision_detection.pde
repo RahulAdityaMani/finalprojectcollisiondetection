@@ -8,7 +8,7 @@ void setup(){
  size(800,800);
 background(255);
 img = loadImage("star.JPG");
-play = new Ball(color(0,0,255),200, 675,7,-7);
+play = new Ball(color(0,0,255),200, 675,3,-3);
 }
 
 void draw(){
@@ -112,8 +112,8 @@ class Ball{
     }
     if (xpos > starX && xpos < starX +20 && ypos >340 && ypos< 360){
       score++;
-      xspeed=xspeed+2;
-      yspeed=yspeed+2;
+      xspeed=xspeed*2;
+      yspeed=yspeed*2;
     }
     if (ypos > 800){
       textSize(32);
