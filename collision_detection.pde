@@ -1,19 +1,25 @@
+/*@pjs preload="star.jpg";*/
+PImage img;
 Ball play;
 void setup(){
  size(800,800);
 background(255);
-play = new Ball(color(0,0,255),400, 675,2,-2);
+img = loadImage("star.JPG");
+play = new Ball(color(0,0,255),200, 675,2,-2);
 frameRate(10000);
 }
 
 void draw(){
   background(255);
+  noStroke();
   fill(42,136,206);
   rect(220,200,50,300);
   rect(540,200,50,300);
   rect(mouseX-50,700,100,30);
-  fill(255,0,0);
-  ellipse (400,350,40,40);
+  fill(255,255,0);
+  rect (390,340,20,20);
+  imageMode(CORNER);
+  image(img,390,340);
 play.display();
   play.move();
 }
