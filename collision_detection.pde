@@ -1,5 +1,7 @@
-/*@pjs preload="star.jpg";*/
+/*@pjs preload="star.JPG";*/
 PImage img;
+int starX = 390;
+int starspeed=3;
 Ball play;
 void setup(){
  size(800,800);
@@ -16,10 +18,19 @@ void draw(){
   rect(220,200,50,300);
   rect(540,200,50,300);
   rect(mouseX-50,700,100,30);
-  fill(255,255,0);
-  rect (390,340,20,20);
   imageMode(CORNER);
-  image(img,390,340);
+  image(img,starX,340);
+    starX+=starspeed;
+  if(starX>=520)
+  {
+    starspeed*=-1;
+  }
+  else if(starX<=270)
+  {
+      starspeed*=-1;
+  }
+
+
 play.display();
   play.move();
 }
