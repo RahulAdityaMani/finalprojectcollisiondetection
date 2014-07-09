@@ -2,13 +2,13 @@
 PImage img;
 int starX = 390;
 int starspeed=3;
+int score;
 Ball play;
 void setup(){
  size(800,800);
 background(255);
 img = loadImage("star.JPG");
-play = new Ball(color(0,0,255),200, 675,10,-10);
-//frameRate(10000);
+play = new Ball(color(0,0,255),200, 675,7,-7);
 }
 
 void draw(){
@@ -29,6 +29,9 @@ void draw(){
   {
       starspeed*=-1;
   }
+  textSize(32);
+  textMode(CENTER);
+  text("Points: " + score,100,100);
 
 
 play.display();
@@ -106,6 +109,16 @@ class Ball{
     }
     if (xpos > mouseX-50 && xpos < mouseX + 50 &&  ypos>730+15 && ypos <700-15 && yspeed <0){
      yspeed = -1 * yspeed;
-    } 
-  }
+    }
+    if (xpos > starX && xpos < starX +20 && ypos >340 && ypos< 360){
+      score++;
+      xspeed=xspeed+2;
+      yspeed=yspeed+2;
+    }
+    if (ypos > 800){
+      textSize(32);
+  textMode(CENTER);
+  text("You Lose!",300,600);
+    }
+  }  
 }
